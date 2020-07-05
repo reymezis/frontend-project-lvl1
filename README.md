@@ -3,3 +3,5 @@
 ![](https://github.com/reymezis/frontend-project-lvl1/workflows/My-GithubActions-CI/badge.svg)
 
 <a href="https://asciinema.org/a/344870" target="_blank"><img src="https://asciinema.org/a/344870.svg" /></a>
+
+<a href="https://asciinema.org/a/1cKttL8LGIRdfPGaQpFzfdw41" target="_blank"><img src="https://asciinema.org/a/1cKttL8LGIRdfPGaQpFzfdw41.svg" /></a>
