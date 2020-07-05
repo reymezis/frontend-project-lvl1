@@ -6,8 +6,8 @@ const getEngine = (condition, getData) => {
   console.log(`${condition}`);
 
   for (let i = 0; i < 3; i += 1) {
-    const date = getData();
-    const [question, rightAnswer] = date;
+    const data = getData();
+    const [question, rightAnswer] = data;
     console.log(`Question: ${question}`);
     const getAnswer = readlineSync.question('Your answer:');
     if (getAnswer === rightAnswer) {
