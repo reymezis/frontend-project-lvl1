@@ -12,20 +12,20 @@ const getGcd = (a, b) => {
   return getGcd(b, a % b);
 };
 
-const gcdGame = () => {
+const runGameGcd = () => {
   const condition = 'Find the greatest common divisor of given numbers.';
 
   const getData = () => {
     const firstNumber = getRandomNumber(10, 100);
     const secondNumber = getRandomNumber(10, 100);
     const question = `${firstNumber} ${secondNumber}`;
-    const correctAnswer = getGcd(firstNumber, secondNumber);
+    const answer = getGcd(firstNumber, secondNumber);
     const data = [];
-    data.push(question, correctAnswer.toString());
+    data.push(question, answer.toString());
     return data;
   };
 
   getEngine(condition, getData);
 };
 
-export default gcdGame;
+export default runGameGcd;

@@ -5,24 +5,24 @@ const getRandomNumber = (min, max) => {
   return Math.floor(rand);
 };
 
-const getCorrectAnswer = (question) => {
+const getAnswer = (question) => {
   if (question % 2 === 0) {
     return 'yes';
   }
   return 'no';
 };
 
-const evenGame = () => {
+const runGameEven = () => {
   const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const getData = () => {
     const data = [];
     const question = getRandomNumber(1, 50);
-    const rightAnswer = getCorrectAnswer(question);
-    data.push(question, rightAnswer);
+    const answer = getAnswer(question);
+    data.push(question, answer);
     return data;
   };
   getEngine(condition, getData);
 };
 
-export default evenGame;
+export default runGameEven;

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import progressionGame from '../src/games/progressionCheck.js';
+import runGameProgression from '../src/games/progression.js';
 
-console.log('Welcome to the Brain Games!');
-progressionGame();
+runGameProgression();

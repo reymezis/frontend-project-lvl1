@@ -5,10 +5,10 @@ const getRandomNumber = (min, max) => {
   return Math.floor(rand);
 };
 
-const getRandomOperation = () => {
-  const operations = ['+', '-', '*'];
+const getRandomOperator = () => {
+  const operators = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * 3);
-  return operations[randomIndex];
+  return operators[randomIndex];
 };
 
 const getQuestion = (firstNumber, secondNumber, operator) => {
@@ -18,7 +18,7 @@ const getQuestion = (firstNumber, secondNumber, operator) => {
   return question;
 };
 
-const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
+const getAnswer = (firstNumber, secondNumber, operator) => {
   let result;
   if (operator === '+') {
     result = firstNumber + secondNumber;
@@ -30,21 +30,21 @@ const getCorrectAnswer = (firstNumber, secondNumber, operator) => {
   return result.toString();
 };
 
-const calcGame = () => {
+const runGameCalc = () => {
   const condition = 'What is the result of the expression?';
 
   const getData = () => {
     const firstNumber = getRandomNumber(0, 10);
     const secondNumber = getRandomNumber(0, 10);
-    const operator = getRandomOperation();
+    const operator = getRandomOperator();
     const data = [];
     const question = getQuestion(firstNumber, secondNumber, operator);
-    const rightAnswer = getCorrectAnswer(firstNumber, secondNumber, operator);
-    data.push(question, rightAnswer);
+    const answer = getAnswer(firstNumber, secondNumber, operator);
+    data.push(question, answer);
     return data;
   };
 
   getEngine(condition, getData);
 };
 
-export default calcGame;
+export default runGameCalc;

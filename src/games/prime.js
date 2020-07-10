@@ -5,17 +5,15 @@ const getRandomNumber = (min, max) => {
   return Math.floor(rand);
 };
 
-const isPrime = (number) => {
-  if (number < 2) {
+const isPrime = (num) => {
+  if (num < 2) {
     return false;
   }
-
-  for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) {
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) {
       return false;
     }
   }
-
   return true;
 };
 
@@ -26,7 +24,7 @@ const getAnswer = (answer) => {
   return 'no';
 };
 
-const playPrime = () => {
+const runGamePrime = () => {
   const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const getData = () => {
@@ -40,4 +38,4 @@ const playPrime = () => {
   getEngine(condition, getData);
 };
 
-export default playPrime;
+export default runGamePrime;
