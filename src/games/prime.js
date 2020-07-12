@@ -17,8 +17,8 @@ const isPrime = (value) => {
   return true;
 };
 
-const getAnswer = (answer) => {
-  if (answer) {
+const getAnswer = (question) => {
+  if (isPrime(question)) {
     return 'yes';
   }
   return 'no';
@@ -26,8 +26,7 @@ const getAnswer = (answer) => {
 
 const getGameData = () => {
   const question = getRandomNumber(0, 100);
-  const primeOrNot = isPrime(question);
-  const answer = getAnswer(primeOrNot);
+  const answer = getAnswer(question);
 
   const gameData = [];
   gameData.push(question, answer);

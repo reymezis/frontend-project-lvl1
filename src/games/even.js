@@ -12,8 +12,8 @@ const isEven = (value) => {
   return false;
 };
 
-const getAnswer = (evenOrNot) => {
-  if (evenOrNot) {
+const getAnswer = (question) => {
+  if (isEven(question)) {
     return 'yes';
   }
   return 'no';
@@ -22,8 +22,7 @@ const getAnswer = (evenOrNot) => {
 const getGameData = () => {
   const gameData = [];
   const question = getRandomNumber(1, 50);
-  const evenOrNot = isEven(question);
-  const answer = getAnswer(evenOrNot);
+  const answer = getAnswer(question);
   gameData.push(question, answer);
   return gameData;
 };
