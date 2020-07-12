@@ -5,12 +5,12 @@ const getRandomNumber = (min, max) => {
   return Math.floor(rand);
 };
 
-const isPrime = (num) => {
-  if (num < 2) {
+const isPrime = (value) => {
+  if (value < 2) {
     return false;
   }
-  for (let i = 2; i < num; i += 1) {
-    if (num % i === 0) {
+  for (let i = 2; i < value; i += 1) {
+    if (value % i === 0) {
       return false;
     }
   }
@@ -24,18 +24,20 @@ const getAnswer = (answer) => {
   return 'no';
 };
 
-const runGamePrime = () => {
-  const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const getGameData = () => {
+  const question = getRandomNumber(0, 100);
+  const primeOrNot = isPrime(question);
+  const answer = getAnswer(primeOrNot);
 
-  const getData = () => {
-    const question = getRandomNumber(0, 100);
-    const primeOrNot = isPrime(question);
-    const answer = getAnswer(primeOrNot);
-    const data = [];
-    data.push(question, answer);
-    return data;
-  };
-  getEngine(condition, getData);
+  const gameData = [];
+  gameData.push(question, answer);
+  return gameData;
+};
+
+const runGamePrime = () => {
+  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+  getEngine(description, getGameData);
 };
 
 export default runGamePrime;

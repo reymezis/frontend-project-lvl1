@@ -30,21 +30,22 @@ const getAnswer = (firstNumber, secondNumber, operator) => {
   return result.toString();
 };
 
+const getGameData = () => {
+  const firstNumber = getRandomNumber(0, 10);
+  const secondNumber = getRandomNumber(0, 10);
+  const operator = getRandomOperator();
+
+  const gameData = [];
+  const question = getQuestion(firstNumber, secondNumber, operator);
+  const answer = getAnswer(firstNumber, secondNumber, operator);
+  gameData.push(question, answer);
+  return gameData;
+};
+
 const runGameCalc = () => {
-  const condition = 'What is the result of the expression?';
+  const description = 'What is the result of the expression?';
 
-  const getData = () => {
-    const firstNumber = getRandomNumber(0, 10);
-    const secondNumber = getRandomNumber(0, 10);
-    const operator = getRandomOperator();
-    const data = [];
-    const question = getQuestion(firstNumber, secondNumber, operator);
-    const answer = getAnswer(firstNumber, secondNumber, operator);
-    data.push(question, answer);
-    return data;
-  };
-
-  getEngine(condition, getData);
+  getEngine(description, getGameData);
 };
 
 export default runGameCalc;
