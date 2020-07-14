@@ -5,7 +5,7 @@ const isPrime = (value) => {
   if (value < 2) {
     return false;
   }
-  for (let i = 2; i < value; i += 1) {
+  for (let i = 2; i <= value / 2; i += 1) {
     if (value % i === 0) {
       return false;
     }
@@ -13,25 +13,17 @@ const isPrime = (value) => {
   return true;
 };
 
-const getAnswer = (question) => {
-  if (isPrime(question)) {
-    return 'yes';
-  }
-  return 'no';
-};
+const getAnswer = (question) => (isPrime(question) ? 'yes' : 'no');
 
 const getGameData = () => {
   const question = getRandomNumber(0, 100);
   const answer = getAnswer(question);
-
-  const gameData = [];
-  gameData.push(question, answer);
-  return gameData;
+  return [question, answer];
 };
 
-const runGamePrime = () => {
-  const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
+const runGamePrime = () => {
   runEngine(description, getGameData);
 };
 
