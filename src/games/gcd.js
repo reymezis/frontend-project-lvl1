@@ -1,9 +1,5 @@
 import getEngine from '../index.js';
-
-const getRandomNumber = (min, max) => {
-  const rand = min + Math.random() * (max + 1 - min);
-  return Math.floor(rand);
-};
+import getRandomNumber from '../utils.js';
 
 const getGcd = (a, b) => {
   if (b === 0) {
