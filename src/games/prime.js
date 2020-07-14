@@ -1,4 +1,4 @@
-import getEngine from '../index.js';
+import runEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const isPrime = (value) => {
@@ -32,7 +32,7 @@ const getGameData = () => {
 const runGamePrime = () => {
   const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  getEngine(description, getGameData);
+  runEngine(description, getGameData);
 };
 
 export default runGamePrime;

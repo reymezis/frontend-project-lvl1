@@ -1,4 +1,4 @@
-import getEngine from '../index.js';
+import runEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const getRandomOperator = () => {
@@ -41,7 +41,7 @@ const getGameData = () => {
 const runGameCalc = () => {
   const description = 'What is the result of the expression?';
 
-  getEngine(description, getGameData);
+  runEngine(description, getGameData);
 };
 
 export default runGameCalc;

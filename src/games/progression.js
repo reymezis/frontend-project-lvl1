@@ -1,4 +1,4 @@
-import getEngine from '../index.js';
+import runEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const generateProgression = () => {
@@ -28,7 +28,7 @@ const getGameData = () => {
 const runGameProgression = () => {
   const description = 'What number is missing in the progression?';
 
-  getEngine(description, getGameData);
+  runEngine(description, getGameData);
 };
 
 export default runGameProgression;
