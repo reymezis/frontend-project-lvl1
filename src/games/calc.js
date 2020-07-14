@@ -1,29 +1,39 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
+const operators = ['+', '-', '*'];
+
 const getRandomOperator = () => {
-  const operators = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * 3);
+  const randomIndex = getRandomNumber(0, 2);
   return operators[randomIndex];
 };
 
 const getQuestion = (firstNumber, secondNumber, operator) => {
-  const strFirstNumber = firstNumber.toString();
-  const strSecondNumber = secondNumber.toString();
-  const question = `${strFirstNumber} ${operator} ${strSecondNumber}`;
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
   return question;
 };
 
-const getAnswer = (firstNumber, secondNumber, operator) => {
+const getResultCalculation = (firstNumber, secondNumber, operator) => {
   let result;
-  if (operator === '+') {
-    result = firstNumber + secondNumber;
-  } else if (operator === '-') {
-    result = firstNumber - secondNumber;
-  } else if (operator === '*') {
-    result = firstNumber * secondNumber;
+  switch (operator) {
+    case '+':
+      result = firstNumber + secondNumber;
+      break;
+
+    case '-':
+      result = firstNumber - secondNumber;
+      break;
+
+    default:
+      result = firstNumber * secondNumber;
+      break;
   }
-  return result.toString();
+  return result;
+};
+
+const getAnswer = (firstNumber, secondNumber, operator) => {
+  const answer = getResultCalculation(firstNumber, secondNumber, operator);
+  return answer.toString();
 };
 
 const getGameData = () => {
@@ -31,16 +41,14 @@ const getGameData = () => {
   const secondNumber = getRandomNumber(0, 10);
   const operator = getRandomOperator();
 
-  const gameData = [];
   const question = getQuestion(firstNumber, secondNumber, operator);
   const answer = getAnswer(firstNumber, secondNumber, operator);
-  gameData.push(question, answer);
-  return gameData;
+  return [question, answer];
 };
 
-const runGameCalc = () => {
-  const description = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
+const runGameCalc = () => {
   runEngine(description, getGameData);
 };
 

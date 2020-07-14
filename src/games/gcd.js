@@ -11,17 +11,15 @@ const getGcd = (a, b) => {
 const getGameData = () => {
   const firstNumber = getRandomNumber(10, 100);
   const secondNumber = getRandomNumber(10, 100);
-  const question = `${firstNumber} ${secondNumber}`;
-  const answer = getGcd(firstNumber, secondNumber);
 
-  const gameData = [];
-  gameData.push(question, answer.toString());
-  return gameData;
+  const question = `${firstNumber} ${secondNumber}`;
+  const answer = getGcd(firstNumber, secondNumber).toString();
+  return [question, answer];
 };
 
-const runGameGcd = () => {
-  const description = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
+const runGameGcd = () => {
   runEngine(description, getGameData);
 };
 
