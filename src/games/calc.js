@@ -24,9 +24,12 @@ const getResultCalculation = (firstNumber, secondNumber, operator) => {
       result = firstNumber - secondNumber;
       break;
 
-    default:
+    case '*':
       result = firstNumber * secondNumber;
       break;
+
+    default:
+      return null;
   }
   return result;
 };
