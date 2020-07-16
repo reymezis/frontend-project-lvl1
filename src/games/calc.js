@@ -4,8 +4,7 @@ import getRandomNumber from '../utils.js';
 const operators = ['+', '-', '*'];
 
 const getRandomOperator = () => {
-  const quantityOperators = operators.length - 1;
-  const randomIndex = getRandomNumber(0, quantityOperators);
+  const randomIndex = getRandomNumber(0, operators.length - 1);
   return operators[randomIndex];
 };
 

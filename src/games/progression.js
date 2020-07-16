@@ -1,9 +1,7 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const progressionLength = 10;
-
-const generateProgression = (firstElement, step) => {
+const generateProgression = (firstElement, step, progressionLength) => {
   const progression = [];
 
   for (let n = 0; n < progressionLength; n += 1) {
@@ -14,9 +12,10 @@ const generateProgression = (firstElement, step) => {
 };
 
 const getGameData = () => {
+  const progressionLength = 10;
   const firstElement = getRandomNumber(0, 5);
   const step = getRandomNumber(1, 10);
-  const progression = generateProgression(firstElement, step);
+  const progression = generateProgression(firstElement, step, progressionLength);
   const hiddenElementIndex = getRandomNumber(0, progressionLength - 1);
 
   const answer = progression[hiddenElementIndex].toString();
