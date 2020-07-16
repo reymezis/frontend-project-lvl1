@@ -8,7 +8,7 @@ const getAnswer = (question) => (isEven(question) ? 'yes' : 'no');
 const getGameData = () => {
   const question = getRandomNumber(1, 50);
   const answer = getAnswer(question);
-  return [question, answer];
+  return [question.toString(), answer];
 };
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';

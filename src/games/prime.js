@@ -1,12 +1,12 @@
 import runEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const isPrime = (value) => {
-  if (value < 2) {
+const isPrime = (num) => {
+  if (num < 2) {
     return false;
   }
-  for (let i = 2; i <= value / 2; i += 1) {
-    if (value % i === 0) {
+  for (let divisor = 2; divisor <= num / 2; divisor += 1) {
+    if (num % divisor === 0) {
       return false;
     }
   }
@@ -18,7 +18,7 @@ const getAnswer = (question) => (isPrime(question) ? 'yes' : 'no');
 const getGameData = () => {
   const question = getRandomNumber(0, 100);
   const answer = getAnswer(question);
-  return [question, answer];
+  return [question.toString(), answer];
 };
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';

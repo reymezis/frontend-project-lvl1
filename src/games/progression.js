@@ -3,9 +3,7 @@ import getRandomNumber from '../utils.js';
 
 const progressionLength = 10;
 
-const generateProgression = () => {
-  const firstElement = getRandomNumber(0, 5);
-  const step = getRandomNumber(1, 10);
+const generateProgression = (firstElement, step) => {
   const progression = [];
 
   for (let n = 0; n < progressionLength; n += 1) {
@@ -16,11 +14,13 @@ const generateProgression = () => {
 };
 
 const getGameData = () => {
-  const progression = generateProgression();
-  const hiddenElementIndex = getRandomNumber(0, 9);
+  const firstElement = getRandomNumber(0, 5);
+  const step = getRandomNumber(1, 10);
+  const progression = generateProgression(firstElement, step);
+  const hiddenElementIndex = getRandomNumber(0, progressionLength - 1);
 
   const answer = progression[hiddenElementIndex].toString();
-  progression.splice(hiddenElementIndex, 1, '..');
+  progression[hiddenElementIndex] = '..';
   const question = progression.join(' ');
   return [question, answer];
 };

@@ -4,7 +4,8 @@ import getRandomNumber from '../utils.js';
 const operators = ['+', '-', '*'];
 
 const getRandomOperator = () => {
-  const randomIndex = getRandomNumber(0, 2);
+  const quantityOperators = operators.length - 1;
+  const randomIndex = getRandomNumber(0, quantityOperators);
   return operators[randomIndex];
 };
 
@@ -14,24 +15,19 @@ const getQuestion = (firstNumber, secondNumber, operator) => {
 };
 
 const getResultCalculation = (firstNumber, secondNumber, operator) => {
-  let result;
   switch (operator) {
     case '+':
-      result = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
 
     case '-':
-      result = firstNumber - secondNumber;
-      break;
+      return firstNumber - secondNumber;
 
     case '*':
-      result = firstNumber * secondNumber;
-      break;
+      return firstNumber * secondNumber;
 
     default:
       return null;
   }
-  return result;
 };
 
 const getAnswer = (firstNumber, secondNumber, operator) => {
